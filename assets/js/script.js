@@ -83,6 +83,18 @@ $(document).ready(function() {
         }
     }
 
+    // display error function
+    function displayError(i, msg) {
+        i.text(msg)
+        i.show();
+    }
+
+    // display success function
+    function displaySuccess(i) {
+        i.empty()
+        i.hide()
+    }
+
     // calling display data
     displayData(data)
 })
