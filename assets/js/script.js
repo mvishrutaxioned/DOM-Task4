@@ -24,4 +24,22 @@ $(document).ready(function() {
             obj.firstName = $('#firstName').val()
         }
     }
+
+    // check last name function
+    function checkLName(l, obj) {
+        var i = $('.lName')
+        var regex = /[^a-zA-z]/g;
+        if($('#lastName').val() == '') {
+            var msg = 'Last name field is required';
+            displayError(i, msg)
+            return false;
+        } else if (regex.test($('#lastName').val())){
+            var msg = 'Please enter valid last name';
+            displayError(i, msg);
+        } else {
+            displaySuccess(i)
+            l.l = true
+            obj.lastName = $('#lastName').val()
+        }
+    }
 })
