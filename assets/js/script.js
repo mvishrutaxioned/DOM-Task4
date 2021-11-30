@@ -42,4 +42,18 @@ $(document).ready(function() {
             obj.lastName = $('#lastName').val()
         }
     }
+
+    // check gender function
+    function checkGender(g, obj) {
+        var i = $('.genderErr')
+        var radio = $("input[name='gender']:checked").val();
+        if(!radio) {
+            var msg = 'Gender is required';
+            displayError(i, msg);
+        } else {
+            displaySuccess(i)
+            g.g = true;
+            obj.gender = radio
+        }
+    }
 })
