@@ -144,6 +144,23 @@ $(document).ready(function() {
             })
         })
 
+        // edit button functionality
+        $('.edit').each(function(i, elem) {
+            $(this).click(e => {
+                e.preventDefault();
+                edit = true;
+                var myId
+                var btnName = $(this).parent().parent().find('td:first-child').text();
+                data.find((elem) => { if(elem.firstName == btnName) myId = elem.id; })
+                myData = data.find(e => e.id === myId)
+
+                $('#firstName').val(myData.firstName)
+                $('#lastName').val(myData.lastName)
+                $(`#${myData.gender.toLowerCase()}`).attr('checked', true)
+                $('#address').val(myData.address)
+            })
+        })
+
     }
 
     // calling display data
