@@ -114,6 +114,25 @@ $(document).ready(function() {
         }
     }
 
+    // display data functionality
+    function displayData(data) {
+        var info;
+        $('.table table tbody').html('')
+        for(var i in data) {
+            info += `
+                <tr>
+                    <td>${data[i].firstName}</td>
+                    <td>${data[i].lastName}</td>
+                    <td>${data[i].gender}</td>
+                    <td>${data[i].address}</td>
+                    <td><button class="edit">Edit</td>
+                    <td><button class="delete">Delete</button></td>
+                </tr>
+            `;   
+            $('.table table tbody').html(info)
+        }
+    }
+
     // calling display data
     displayData(data)
 })
