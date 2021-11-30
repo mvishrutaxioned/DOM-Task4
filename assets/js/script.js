@@ -165,4 +165,12 @@ $(document).ready(function() {
 
     // calling display data
     displayData(data)
+
+    // reset button trigger
+    $('form button:nth-of-type(2)').click(e => {
+        e.preventDefault();
+        $('form').trigger('reset')
+    })
+
+    
 })
