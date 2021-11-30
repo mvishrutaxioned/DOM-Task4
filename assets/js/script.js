@@ -56,4 +56,17 @@ $(document).ready(function() {
             obj.gender = radio
         }
     }
+
+    // check address function
+    function checkAddress(a, obj) {
+        var i = $('.add')
+        if($('textarea').val() == '') {
+            var msg = 'Address field is required';
+            displayError(i, msg);
+        } else {
+            displaySuccess(i)
+            a.a = true
+            obj.address = $('textarea').val()
+        }
+    }
 })
