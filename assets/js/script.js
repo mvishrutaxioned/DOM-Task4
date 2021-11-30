@@ -131,6 +131,19 @@ $(document).ready(function() {
             `;   
             $('.table table tbody').html(info)
         }
+
+        // delete button functionality
+        $('.delete').each(function(i, elem) {
+            $(elem).click(e => {
+                e.preventDefault();
+                var myId;
+                var btnName = $(this).parent().parent().find('td:first-child').text();
+                data.find((elem) => { if(elem.firstName == btnName) myId = elem.id; })
+                $(data).each(function(index, value) { if(value.id == myId) data.splice(index, 1) });
+                displayData(data)
+            })
+        })
+
     }
 
     // calling display data
