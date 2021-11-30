@@ -95,6 +95,25 @@ $(document).ready(function() {
         i.hide()
     }
 
+    // check all function
+    function checkAll(obj, newData, myData=false, edit=false) {
+        var value = Object.values(obj).every((v) => v === true)
+        if(myData && value && edit) {
+            var myId;
+            data.find((elem) => { if(elem.firstName == myData.firstName) myId = elem.id; })
+            $(data).each(function(index, e) { if(e.id == myId) data.splice(index, 1) });
+            data.unshift(newData)
+            displayData(data)
+            $('form').trigger('reset')
+        } else if (value) {
+            data.unshift(newData)
+            displayData(data)
+            $('form').trigger('reset');
+        } else {
+            return null
+        }
+    }
+
     // calling display data
     displayData(data)
 })
