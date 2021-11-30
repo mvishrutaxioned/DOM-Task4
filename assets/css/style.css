@@ -166,7 +166,29 @@ form button {
 }
 /* form section styling ends here */
 
+/* table section styling starts here */
+.table .wrapper {
+  width: 80%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.table table tr th {
+  font-weight: 600;
+}
+
+.table table tr th, .table table tr td {
+  padding: 10px 25px;
+  border: 1px solid #000;
+  font-size: 14px;
+}
+
+.table table {
+  border-collapse: collapse;
+}
+/* table section styling ends here */
 
 /*=================================
   main styling ends here
