@@ -69,4 +69,20 @@ $(document).ready(function() {
             obj.address = $('textarea').val()
         }
     }
+
+    // check terms function
+    function checkTerms(t, obj) {
+        var i = $('.term')
+        var value = $("input[type='checkbox']")
+        if(!value.prop('checked')) {
+            var msg = 'Terms is not checked';
+            displayError(i, msg);
+        } else {
+            displaySuccess(i)
+            t.t = true
+        }
+    }
+
+    // calling display data
+    displayData(data)
 })
