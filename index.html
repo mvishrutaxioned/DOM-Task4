@@ -12,10 +12,6 @@
   <body>
     <!--container start-->
     <div class="container">
-      <!--header section start-->
-      <header>
-      </header>
-      <!--header section ends-->
       <!--main section start-->
       <main>
         <section class="form">
@@ -39,10 +35,10 @@
                     <label>Gender:</label>
                     <div  class="inputs radios">
                       <div>
-                        <input type="radio" name="gender" id="male" value="Male" />
-                        <p>Male</p>
-                        <input type="radio" name="gender" id="female" value="Female" />
-                        <p>Female</p>
+                        <input type="radio" name="gender" id="male" name="male" value="Male" />
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" id="female" name="female" value="Female" />
+                        <label for="female">Female</label>
                       </div>
                       <span class="genderErr"></span>
                     </div>
@@ -55,15 +51,15 @@
                     </div>
                   </div>
                   <div>
-                    <div class="inputs">
-                      <input type="checkbox" id="terms" value="Agreed">
+                    <input type="checkbox" id="terms" name="terms" value="Agreed">
+                    <div>
+                      <label for="terms">Terms and Conditions</label>
                       <span class="term"></span>
                     </div>
-                    <p>Terms and Conditions</p>
                   </div>
                   <div>
                     <button type="submit">Submit</button>
-                    <button type="reset">Cancel</button>
+                    <button class="reset" type="reset">Cancel</button>
                   </div>
               </div>
             </form>
@@ -88,10 +84,6 @@
         </section>
       </main>
       <!--main section end-->
-      <!--footer section start-->
-      <footer>      
-      </footer>
-      <!--footer section end-->
     </div>
     <!--container end-->
 

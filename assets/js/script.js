@@ -6,16 +6,15 @@ $(document).ready(function() {
     var newData;
     var myData;
     var edit;
+    var regexName = /[^a-zA-z]/g;
 
     // checkout first name function
     function checkFName(f, obj) {
         var i = $('.fName')
-        var regex = /[^a-zA-z]/g;
         if($('#firstName').val() == '') {
             var msg = 'First name field is required';
             displayError(i, msg)
-            return false;
-        } else if (regex.test($('#firstName').val())){
+        } else if (regexName.test($('#firstName').val())){
             var msg = 'Please enter valid first name';
             displayError(i, msg);
         } else {
@@ -28,12 +27,10 @@ $(document).ready(function() {
     // check last name function
     function checkLName(l, obj) {
         var i = $('.lName')
-        var regex = /[^a-zA-z]/g;
         if($('#lastName').val() == '') {
             var msg = 'Last name field is required';
             displayError(i, msg)
-            return false;
-        } else if (regex.test($('#lastName').val())){
+        } else if (regexName.test($('#lastName').val())){
             var msg = 'Please enter valid last name';
             displayError(i, msg);
         } else {
@@ -137,7 +134,7 @@ $(document).ready(function() {
             $(elem).click(e => {
                 e.preventDefault();
                 var myId;
-                var btnName = $(this).parent().parent().find('td:first-child').text();
+                var btnName = $(this).parents().find('td:first-child').text();
                 data.find((elem) => { if(elem.firstName == btnName) myId = elem.id; })
                 $(data).each(function(index, value) { if(value.id == myId) data.splice(index, 1) });
                 displayData(data)
@@ -150,7 +147,7 @@ $(document).ready(function() {
                 e.preventDefault();
                 edit = true;
                 var myId
-                var btnName = $(this).parent().parent().find('td:first-child').text();
+                var btnName = $(this).parents().find('td:first-child').text();
                 data.find((elem) => { if(elem.firstName == btnName) myId = elem.id; })
                 myData = data.find(e => e.id === myId)
 
@@ -167,9 +164,10 @@ $(document).ready(function() {
     displayData(data)
 
     // reset button trigger
-    $('form button:nth-of-type(2)').click(e => {
+    $('.reset').click(e => {
         e.preventDefault();
         $('form').trigger('reset')
+        $('input[name="gender"]').attr('checked', false);
     })
 
     // submit form function

@@ -129,16 +129,19 @@ form {
 }
 
 form > div {
-  margin: 5px auto;
+  margin: 10px auto;
   display: flex;
-  margin: 10px 30px;
   align-items: center;
 }
 
 form > div > div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
+
+form div:nth-of-type(5) label,
+form div:nth-of-type(5) span {
+  margin-left: 44px;
 }
 
 .radios div {
@@ -146,9 +149,7 @@ form > div > div {
   flex-direction: row;
 }
 
-.inputs {
-  margin-left: 20px;
-}
+.inputs { margin-left: 20px; }
 
 span {
   margin-top: 5px;
@@ -165,9 +166,8 @@ form button {
   outline: none;
 }
 
-textarea {
-  resize: none;
-}
+textarea { resize: none; }
+input { cursor: pointer; }
 
 /* form section styling ends here */
 
@@ -180,9 +180,7 @@ textarea {
   align-items: center;
 }
 
-.table table tr th {
-  font-weight: 600;
-}
+.table table tr th { font-weight: 600; }
 
 .table table tr th, .table table tr td {
   padding: 10px 25px;
@@ -190,9 +188,7 @@ textarea {
   font-size: 14px;
 }
 
-.table table {
-  border-collapse: collapse;
-}
+.table table { border-collapse: collapse; }
 /* table section styling ends here */
 
 /*=================================
@@ -202,7 +198,5 @@ textarea {
 /*media query starts*/
 /*media query for 768px starts here*/
 @media only screen and (max-width: 768px) {
-  form > div {
-    flex-direction: column;
-  }
+  form > div { flex-direction: column; }
 }  
