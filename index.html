@@ -2,7 +2,7 @@
 <html lang="en"> 
   <head>
     <meta charset="utf-8">
-    <title>Client</title>
+    <title>Form Validation</title>
     <meta name="description" lang="en" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="favicon.ico" />
@@ -18,6 +18,57 @@
       <!--header section ends-->
       <!--main section start-->
       <main>
+        <section class="form">
+          <div class="wrapper">
+            <form action="#FIXME" id="dataForm">
+                  <div>
+                    <label>First Name:</label>
+                    <div class="inputs">
+                      <input type="text" id="firstName" />
+                      <span class="fName"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <label>Last Name:</label>
+                    <div class="inputs">
+                      <input type="text" id="lastName" />
+                      <span class="lName"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <label>Gender:</label>
+                    <div  class="inputs radios">
+                      <div>
+                        <input type="radio" name="gender" id="male" value="Male" />
+                        <p>Male</p>
+                        <input type="radio" name="gender" id="female" value="Female" />
+                        <p>Female</p>
+                      </div>
+                      <span class="genderErr"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <label>Address:</label>
+                    <div class="inputs">
+                      <textarea id="address"></textarea>
+                      <span class="add"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="inputs">
+                      <input type="checkbox" id="terms" value="Agreed">
+                      <span class="term"></span>
+                    </div>
+                    <p>Terms and Conditions</p>
+                  </div>
+                  <div>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Cancel</button>
+                  </div>
+              </div>
+            </form>
+          </div>
+        </section>
       </main>
       <!--main section end-->
       <!--footer section start-->
@@ -26,5 +77,8 @@
       <!--footer section end-->
     </div>
     <!--container end-->
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
