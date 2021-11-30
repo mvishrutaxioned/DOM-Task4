@@ -164,6 +164,11 @@ form button {
   background: #fff;
   outline: none;
 }
+
+textarea {
+  resize: none;
+}
+
 /* form section styling ends here */
 
 /* table section styling starts here */

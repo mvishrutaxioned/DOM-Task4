@@ -172,5 +172,25 @@ $(document).ready(function() {
         $('form').trigger('reset')
     })
 
-    
+    // submit form function
+    $("form").submit((e) => {
+        e.preventDefault();
+
+        var successRate = { f: '', l: '', g: '', a: '', t: '' }
+        newData = {
+            id: Math.round(Math.random() * 10000),
+            firstName: '',
+            lastName: '',
+            gender: '',
+            address: ''
+        }
+
+        checkFName(successRate, newData)
+        checkLName(successRate, newData)
+        checkGender(successRate, newData)
+        checkAddress(successRate, newData)
+        checkTerms(successRate, newData)
+        checkAll(successRate, newData, myData, edit)
+        edit = false;
+    })
 })
